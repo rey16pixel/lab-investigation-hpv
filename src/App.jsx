@@ -503,25 +503,25 @@ export default function App() {
               ))}
             </div>
 
-            <div className="h-[26rem] md:h-48 mb-8">
+            <div className="min-h-[24rem] md:min-h-[12rem] h-auto mb-8 flex flex-col">
               <AnimatePresence mode="wait">
                 {activeProcess ? (
                   <motion.div
                     key={activeProcess}
                     initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -15 }}
-                    className="bg-slate-800/40 border-l-4 border-cyan-500 p-8 rounded-r-lg shadow-2xl h-full flex flex-col justify-center border-y border-r border-y-slate-700/50 border-r-slate-700/50 relative overflow-hidden"
+                    className="bg-slate-800/40 border-l-4 border-cyan-500 p-6 md:p-8 rounded-r-lg shadow-2xl flex-1 flex flex-col justify-center border-y border-r border-y-slate-700/50 border-r-slate-700/50 relative overflow-hidden"
                   >
                     <div className="absolute top-0 right-0 p-4 opacity-10 pointer-events-none">
-                      <Fingerprint className="w-32 h-32" />
+                      <Fingerprint className="w-24 h-24 md:w-32 md:h-32" />
                     </div>
-                    <h4 className="font-black text-white text-xl mb-4 flex items-center gap-4 uppercase tracking-wider">
-                      <span className="text-cyan-400 p-2 bg-cyan-500/10 rounded-lg border border-cyan-500/20">{labProcesses.find(p => p.id === activeProcess).icon}</span>
-                      {labProcesses.find(p => p.id === activeProcess).title}
+                    <h4 className="font-black text-white text-lg md:text-xl mb-3 md:mb-4 flex flex-col sm:flex-row sm:items-center gap-3 md:gap-4 uppercase tracking-wider">
+                      <span className="text-cyan-400 p-2 bg-cyan-500/10 rounded-lg border border-cyan-500/20 self-start sm:self-auto">{labProcesses.find(p => p.id === activeProcess).icon}</span>
+                      <span>{labProcesses.find(p => p.id === activeProcess).title}</span>
                     </h4>
-                    <p className="text-slate-200 text-base leading-relaxed font-mono relative z-10">{labProcesses.find(p => p.id === activeProcess).desc}</p>
+                    <p className="text-slate-200 text-sm md:text-base leading-relaxed font-mono relative z-10">{labProcesses.find(p => p.id === activeProcess).desc}</p>
                   </motion.div>
                 ) : (
-                  <div className="h-full border-2 border-dashed border-slate-700 rounded-lg flex items-center justify-center text-slate-500 text-lg bg-slate-900/40 font-mono uppercase tracking-widest shadow-inner">
+                  <div className="flex-1 min-h-[12rem] border-2 border-dashed border-slate-700 rounded-lg flex items-center justify-center text-slate-500 text-base md:text-lg bg-slate-900/40 font-mono uppercase tracking-widest shadow-inner text-center p-4">
                     [ Menunggu Input Operator ]
                   </div>
                 )}
