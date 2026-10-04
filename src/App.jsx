@@ -156,22 +156,22 @@ export default function App() {
       </div>
 
       {/* Header Panel */}
-      <div className="bg-slate-900/90 px-6 py-4 flex items-center justify-between border-b border-slate-700/60">
-        <div className="flex gap-4 items-center">
+      <div className="bg-slate-900/90 px-4 md:px-6 py-4 flex flex-col md:flex-row items-center justify-between border-b border-slate-700/60 gap-3 md:gap-0">
+        <div className="flex gap-2 md:gap-4 items-center w-full md:w-auto justify-between md:justify-start">
           <div className="flex gap-2">
             <div className="w-3 h-3 rounded-full bg-red-500 shadow-[0_0_10px_rgba(239,68,68,0.6)] animate-pulse"></div>
             <div className="w-3 h-3 rounded-full bg-amber-500 shadow-[0_0_10px_rgba(245,158,11,0.6)]"></div>
           </div>
-          <div className="h-4 w-px bg-slate-700"></div>
-          <span className="text-amber-400 text-xs font-mono tracking-[0.3em] font-bold">SYSTEM ACTIVE</span>
+          <div className="hidden md:block h-4 w-px bg-slate-700"></div>
+          <span className="text-amber-400 text-[10px] md:text-xs font-mono tracking-[0.2em] md:tracking-[0.3em] font-bold">SYSTEM ACTIVE</span>
         </div>
 
-        <div className="flex-1 flex items-center justify-center gap-3">
-          <ShieldAlert className="w-5 h-5 text-cyan-400" />
-          <span className="text-center text-cyan-50 text-sm font-bold tracking-[0.2em] uppercase">{title}</span>
+        <div className="flex-1 flex items-center justify-center gap-2 md:gap-3 text-center">
+          <ShieldAlert className="w-4 h-4 md:w-5 md:h-5 text-cyan-400" />
+          <span className="text-cyan-50 text-xs md:text-sm font-bold tracking-[0.1em] md:tracking-[0.2em] uppercase">{title}</span>
         </div>
 
-        <div className="text-slate-500 text-xs font-mono bg-slate-800 px-3 py-1 rounded border border-slate-700">
+        <div className="text-slate-500 text-[10px] md:text-xs font-mono bg-slate-800 px-2 md:px-3 py-1 rounded border border-slate-700 hidden md:block">
           ATLM-ID: 9402
         </div>
       </div>
@@ -221,18 +221,18 @@ export default function App() {
             </motion.div>
 
             {/* Main Title */}
-            <h1 className="text-6xl md:text-8xl font-black text-white mb-6 tracking-tighter leading-none relative drop-shadow-2xl">
+            <h1 className="text-5xl sm:text-6xl md:text-8xl font-black text-white mb-4 md:mb-6 tracking-tighter leading-none relative drop-shadow-2xl">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-100 to-slate-400">LAB</span><br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">INVESTIGATION</span>
             </h1>
 
-            <div className="flex items-center gap-4 mb-10 bg-slate-900/50 px-6 py-2 rounded-full border border-slate-700/50 backdrop-blur-sm">
+            <div className="flex items-center gap-3 md:gap-4 mb-8 md:mb-10 bg-slate-900/50 px-4 md:px-6 py-2 rounded-full border border-slate-700/50 backdrop-blur-sm text-sm md:text-base">
               <div className="h-1.5 w-1.5 rounded-full bg-cyan-400 animate-pulse"></div>
-              <p className="text-cyan-400 text-lg font-mono tracking-widest uppercase">Case File: #001</p>
+              <p className="text-cyan-400 text-base md:text-lg font-mono tracking-widest uppercase">Case File: #001</p>
               <div className="h-1.5 w-1.5 rounded-full bg-cyan-400 animate-pulse"></div>
             </div>
 
-            <p className="text-slate-300 mb-12 text-xl font-light max-w-2xl leading-relaxed bg-slate-900/40 p-6 rounded-2xl border border-slate-700/50 backdrop-blur-sm shadow-xl">
+            <p className="text-slate-300 mb-10 md:mb-12 text-lg md:text-xl font-light max-w-2xl leading-relaxed bg-slate-900/40 p-4 md:p-6 rounded-2xl border border-slate-700/50 backdrop-blur-sm shadow-xl">
               Penyelidikan kasus molekuler dimulai. Analisis bukti medis, telusuri jejak DNA tersangka, dan temukan pelakunya di dalam laboratorium.
             </p>
 
@@ -240,11 +240,11 @@ export default function App() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={nextStep}
-              className="group relative inline-flex items-center justify-center gap-3 bg-amber-500 text-slate-900 px-12 py-5 rounded-lg font-black shadow-[0_0_40px_rgba(245,158,11,0.4)] hover:shadow-[0_0_60px_rgba(245,158,11,0.6)] transition-all overflow-hidden text-xl uppercase tracking-wider"
+              className="group relative inline-flex items-center justify-center gap-2 md:gap-3 bg-amber-500 text-slate-900 px-8 py-4 md:px-12 md:py-5 rounded-lg font-black shadow-[0_0_40px_rgba(245,158,11,0.4)] hover:shadow-[0_0_60px_rgba(245,158,11,0.6)] transition-all overflow-hidden text-lg md:text-xl uppercase tracking-wider w-full sm:w-auto"
             >
               <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></div>
-              <Briefcase className="w-6 h-6 relative z-10" />
-              <span className="relative z-10 flex items-center gap-2">BUKA BERKAS KASUS <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" /></span>
+              <Briefcase className="w-5 h-5 md:w-6 md:h-6 relative z-10" />
+              <span className="relative z-10 flex items-center gap-2">BUKA BERKAS KASUS <ChevronRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-1 transition-transform" /></span>
             </motion.button>
 
             {/* Fingerprint decoration */}
@@ -259,10 +259,10 @@ export default function App() {
           <WindowFrame key="step1" title="Phase 1: Berkas Pasien">
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between border-b border-slate-700/60 pb-6 mb-8 gap-4">
               <div>
-                <h2 className="font-black text-3xl text-white mb-1 uppercase tracking-wide">Dossier Tersangka / Korban</h2>
-                <p className="text-slate-400 font-mono text-sm">Analisis data medis dengan saksama untuk mencari petunjuk awal.</p>
+                <h2 className="font-black text-2xl md:text-3xl text-white mb-1 uppercase tracking-wide">Dossier Tersangka / Korban</h2>
+                <p className="text-slate-400 font-mono text-xs md:text-sm">Analisis data medis dengan saksama untuk mencari petunjuk awal.</p>
               </div>
-              <span className="bg-amber-500/10 text-amber-400 border border-amber-500/30 px-4 py-2 rounded font-bold tracking-widest flex items-center gap-2 text-sm shadow-[0_0_15px_rgba(245,158,11,0.2)]">
+              <span className="bg-amber-500/10 text-amber-400 border border-amber-500/30 px-3 md:px-4 py-1.5 md:py-2 rounded font-bold tracking-widest flex items-center gap-2 text-xs md:text-sm shadow-[0_0_15px_rgba(245,158,11,0.2)]">
                 <FileWarning className="w-4 h-4" /> CASE #001
               </span>
             </div>
@@ -316,13 +316,13 @@ export default function App() {
               </div>
             </div>
 
-            <div className="flex justify-end">
+            <div className="flex justify-end mt-6">
               <motion.button
                 whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
                 onClick={nextStep}
-                className="bg-cyan-500 text-slate-900 px-10 py-4 rounded-lg font-bold shadow-[0_0_20px_rgba(6,182,212,0.5)] hover:shadow-[0_0_30px_rgba(6,182,212,0.7)] transition-all flex items-center gap-3 uppercase tracking-widest text-lg"
+                className="bg-cyan-500 text-slate-900 px-6 py-3 md:px-10 md:py-4 rounded-lg font-bold shadow-[0_0_20px_rgba(6,182,212,0.5)] hover:shadow-[0_0_30px_rgba(6,182,212,0.7)] transition-all flex items-center justify-center gap-2 md:gap-3 uppercase tracking-widest text-base md:text-lg w-full md:w-auto"
               >
-                PROSES BERKAS <ChevronRight className="w-6 h-6" />
+                PROSES BERKAS <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
               </motion.button>
             </div>
           </WindowFrame>
@@ -366,27 +366,27 @@ export default function App() {
               ))}
             </div>
 
-            <div className="flex justify-between items-center min-h-[5rem]">
+            <div className="flex flex-col md:flex-row justify-between items-stretch md:items-center min-h-[5rem] gap-4">
               <AnimatePresence>
                 {sampleStatus === 'error' && (
-                  <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0 }} className="text-red-400 flex items-center gap-4 font-mono bg-red-950/60 px-6 py-4 rounded-lg border border-red-900/60 shadow-lg">
-                    <XCircle className="w-8 h-8 shrink-0" />
-                    <div><strong className="block text-white uppercase text-base">Bukti Ditolak</strong> <span className="text-sm">Sampel ini tidak sesuai dengan kasus yang sedang diselidiki.</span></div>
+                  <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0 }} className="text-red-400 flex items-center gap-3 md:gap-4 font-mono bg-red-950/60 px-4 md:px-6 py-3 md:py-4 rounded-lg border border-red-900/60 shadow-lg flex-1">
+                    <XCircle className="w-6 h-6 md:w-8 md:h-8 shrink-0" />
+                    <div><strong className="block text-white uppercase text-sm md:text-base">Bukti Ditolak</strong> <span className="text-xs md:text-sm">Sampel ini tidak sesuai dengan kasus yang sedang diselidiki.</span></div>
                   </motion.div>
                 )}
                 {sampleStatus === 'success' && (
-                  <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="text-emerald-400 font-mono bg-emerald-950/60 px-6 py-4 rounded-lg border border-emerald-900/60 flex items-center gap-4 shadow-lg">
-                    <CheckCircle2 className="w-8 h-8 shrink-0" />
-                    <div><strong className="text-white uppercase block text-base">Bukti Diverifikasi</strong> <span className="text-sm">Swab serviks adalah barang bukti utama untuk melacak HPV.</span></div>
+                  <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="text-emerald-400 font-mono bg-emerald-950/60 px-4 md:px-6 py-3 md:py-4 rounded-lg border border-emerald-900/60 flex items-center gap-3 md:gap-4 shadow-lg flex-1">
+                    <CheckCircle2 className="w-6 h-6 md:w-8 md:h-8 shrink-0" />
+                    <div><strong className="text-white uppercase block text-sm md:text-base">Bukti Diverifikasi</strong> <span className="text-xs md:text-sm">Swab serviks adalah barang bukti utama untuk melacak HPV.</span></div>
                   </motion.div>
                 )}
               </AnimatePresence>
               <motion.button
                 onClick={nextStep}
                 disabled={sampleStatus !== 'success'}
-                className={`px-10 py-4 rounded-lg font-bold ml-auto transition-all flex items-center gap-3 uppercase tracking-widest text-lg ${sampleStatus === 'success' ? 'bg-cyan-500 text-slate-900 hover:bg-cyan-400 shadow-[0_0_20px_rgba(6,182,212,0.5)]' : 'bg-slate-800 text-slate-600 cursor-not-allowed border border-slate-700'}`}
+                className={`px-6 py-3 md:px-10 md:py-4 rounded-lg font-bold md:ml-auto transition-all flex items-center justify-center gap-2 md:gap-3 uppercase tracking-widest text-base md:text-lg w-full md:w-auto ${sampleStatus === 'success' ? 'bg-cyan-500 text-slate-900 hover:bg-cyan-400 shadow-[0_0_20px_rgba(6,182,212,0.5)]' : 'bg-slate-800 text-slate-600 cursor-not-allowed border border-slate-700'}`}
               >
-                AMANKAN BUKTI <ChevronRight className="w-6 h-6" />
+                AMANKAN BUKTI <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
               </motion.button>
             </div>
           </WindowFrame>
@@ -424,27 +424,27 @@ export default function App() {
               ))}
             </div>
 
-            <div className="flex justify-between items-center min-h-[5rem]">
+            <div className="flex flex-col md:flex-row justify-between items-stretch md:items-center min-h-[5rem] gap-4">
               <AnimatePresence>
                 {targetStatus === 'error' && (
-                  <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0 }} className="text-red-400 flex items-center gap-4 font-mono bg-red-950/60 px-6 py-4 rounded-lg border border-red-900/60 shadow-lg">
-                    <XCircle className="w-8 h-8 shrink-0" />
-                    <div><strong className="block text-white uppercase text-base">Profil Salah</strong> <span className="text-sm">Kita harus mencari cetak biru genetik pelakunya.</span></div>
+                  <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0 }} className="text-red-400 flex items-center gap-3 md:gap-4 font-mono bg-red-950/60 px-4 md:px-6 py-3 md:py-4 rounded-lg border border-red-900/60 shadow-lg flex-1">
+                    <XCircle className="w-6 h-6 md:w-8 md:h-8 shrink-0" />
+                    <div><strong className="block text-white uppercase text-sm md:text-base">Profil Salah</strong> <span className="text-xs md:text-sm">Kita harus mencari cetak biru genetik pelakunya.</span></div>
                   </motion.div>
                 )}
                 {targetStatus === 'success' && (
-                  <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="text-emerald-400 font-mono bg-emerald-950/60 px-6 py-4 rounded-lg border border-emerald-900/60 flex items-center gap-4 shadow-lg">
-                    <CheckCircle2 className="w-8 h-8 shrink-0" />
-                    <div><strong className="text-white uppercase block text-base">Profil Terkunci</strong> <span className="text-sm">PCR forensik melacak jejak DNA secara spesifik.</span></div>
+                  <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="text-emerald-400 font-mono bg-emerald-950/60 px-4 md:px-6 py-3 md:py-4 rounded-lg border border-emerald-900/60 flex items-center gap-3 md:gap-4 shadow-lg flex-1">
+                    <CheckCircle2 className="w-6 h-6 md:w-8 md:h-8 shrink-0" />
+                    <div><strong className="text-white uppercase block text-sm md:text-base">Profil Terkunci</strong> <span className="text-xs md:text-sm">PCR forensik melacak jejak DNA secara spesifik.</span></div>
                   </motion.div>
                 )}
               </AnimatePresence>
               <motion.button
                 onClick={nextStep}
                 disabled={targetStatus !== 'success'}
-                className={`px-10 py-4 rounded-lg font-bold ml-auto transition-all flex items-center gap-3 uppercase tracking-widest text-lg ${targetStatus === 'success' ? 'bg-cyan-500 text-slate-900 hover:bg-cyan-400 shadow-[0_0_20px_rgba(6,182,212,0.5)]' : 'bg-slate-800 text-slate-600 cursor-not-allowed border border-slate-700'}`}
+                className={`px-6 py-3 md:px-10 md:py-4 rounded-lg font-bold md:ml-auto transition-all flex items-center justify-center gap-2 md:gap-3 uppercase tracking-widest text-base md:text-lg w-full md:w-auto ${targetStatus === 'success' ? 'bg-cyan-500 text-slate-900 hover:bg-cyan-400 shadow-[0_0_20px_rgba(6,182,212,0.5)]' : 'bg-slate-800 text-slate-600 cursor-not-allowed border border-slate-700'}`}
               >
-                MULAI PELACAKAN <ChevronRight className="w-6 h-6" />
+                MULAI PELACAKAN <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
               </motion.button>
             </div>
           </WindowFrame>
@@ -528,20 +528,20 @@ export default function App() {
               </AnimatePresence>
             </div>
 
-            <div className="flex justify-between items-center border-t border-slate-700/50 pt-8">
-              <div className="text-sm font-mono uppercase tracking-widest bg-slate-900/50 px-4 py-2 rounded-lg border border-slate-700">
+            <div className="flex flex-col md:flex-row justify-between items-stretch md:items-center border-t border-slate-700/50 pt-8 gap-4">
+              <div className="text-xs md:text-sm font-mono uppercase tracking-widest bg-slate-900/50 px-4 py-3 md:py-2 rounded-lg border border-slate-700 text-center md:text-left">
                 {visitedProcesses.length < 5 ? (
-                  <span className="text-amber-400 flex items-center gap-3"><AlertCircle className="w-5 h-5" /> Proses belum selesai</span>
+                  <span className="text-amber-400 flex items-center justify-center md:justify-start gap-2 md:gap-3"><AlertCircle className="w-4 h-4 md:w-5 md:h-5" /> Proses belum selesai</span>
                 ) : (
-                  <span className="text-emerald-400 flex items-center gap-3"><CheckCircle2 className="w-5 h-5" /> Investigasi Lengkap</span>
+                  <span className="text-emerald-400 flex items-center justify-center md:justify-start gap-2 md:gap-3"><CheckCircle2 className="w-4 h-4 md:w-5 md:h-5" /> Investigasi Lengkap</span>
                 )}
               </div>
               <motion.button
                 onClick={nextStep}
                 disabled={visitedProcesses.length < 5}
-                className={`px-10 py-4 rounded-lg font-bold transition-all flex items-center gap-3 uppercase tracking-widest text-lg ${visitedProcesses.length === 5 ? 'bg-cyan-500 text-slate-900 hover:bg-cyan-400 shadow-[0_0_20px_rgba(6,182,212,0.5)]' : 'bg-slate-800 text-slate-600 cursor-not-allowed border border-slate-700'}`}
+                className={`px-6 py-3 md:px-10 md:py-4 rounded-lg font-bold transition-all flex items-center justify-center gap-2 md:gap-3 uppercase tracking-widest text-base md:text-lg w-full md:w-auto ${visitedProcesses.length === 5 ? 'bg-cyan-500 text-slate-900 hover:bg-cyan-400 shadow-[0_0_20px_rgba(6,182,212,0.5)]' : 'bg-slate-800 text-slate-600 cursor-not-allowed border border-slate-700'}`}
               >
-                CETAK LAPORAN <ChevronRight className="w-6 h-6" />
+                CETAK LAPORAN <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
               </motion.button>
             </div>
           </WindowFrame>
@@ -559,8 +559,8 @@ export default function App() {
               {/* Radar/Grid Background Effect */}
               <div className="absolute inset-0 bg-[linear-gradient(rgba(30,41,59,0.9)_1px,transparent_1px),linear-gradient(90deg,rgba(30,41,59,0.9)_1px,transparent_1px)] bg-[size:2rem_2rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_80%,transparent_100%)]"></div>
 
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] border border-cyan-500/20 rounded-full opacity-40"></div>
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] border border-cyan-500/30 rounded-full opacity-40"></div>
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] md:w-[350px] md:h-[350px] border border-cyan-500/20 rounded-full opacity-40"></div>
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] md:w-[250px] md:h-[250px] border border-cyan-500/30 rounded-full opacity-40"></div>
 
               <AnimatePresence mode="wait">
                 {!isResultOpen ? (
@@ -631,13 +631,13 @@ export default function App() {
               </AnimatePresence>
             </div>
 
-            <div className="flex justify-end">
+            <div className="flex justify-end mt-6">
               <motion.button
                 onClick={nextStep}
                 disabled={!isResultOpen}
-                className={`px-10 py-4 rounded-lg font-bold flex items-center gap-3 uppercase tracking-widest text-lg ${isResultOpen ? 'bg-cyan-500 text-slate-900 hover:bg-cyan-400 shadow-[0_0_20px_rgba(6,182,212,0.5)]' : 'bg-slate-800 text-slate-600 cursor-not-allowed border border-slate-700'}`}
+                className={`px-6 py-3 md:px-10 md:py-4 rounded-lg font-bold flex items-center justify-center gap-2 md:gap-3 uppercase tracking-widest text-base md:text-lg w-full md:w-auto ${isResultOpen ? 'bg-cyan-500 text-slate-900 hover:bg-cyan-400 shadow-[0_0_20px_rgba(6,182,212,0.5)]' : 'bg-slate-800 text-slate-600 cursor-not-allowed border border-slate-700'}`}
               >
-                LANJUTKAN ANALISIS <ChevronRight className="w-6 h-6" />
+                LANJUTKAN ANALISIS <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
               </motion.button>
             </div>
           </WindowFrame>
@@ -678,12 +678,18 @@ export default function App() {
               ))}
             </div>
 
-            <div className="flex justify-between items-center min-h-[5rem]">
+            <div className="flex flex-col md:flex-row justify-between items-stretch md:items-center min-h-[5rem] gap-4">
               <AnimatePresence>
                 {interpStatus === 'error' && (
-                  <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0 }} className="text-red-400 flex items-center gap-4 font-mono bg-red-950/60 px-6 py-4 rounded-lg border border-red-900/60 shadow-lg">
-                    <XCircle className="w-8 h-8 shrink-0" />
-                    <div><strong className="block text-white uppercase text-base">Vonis Ditolak</strong> <span className="text-sm">Kesimpulan tidak sesuai dengan target DNA di awal investigasi.</span></div>
+                  <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0 }} className="text-red-400 flex items-center gap-3 md:gap-4 font-mono bg-red-950/60 px-4 md:px-6 py-3 md:py-4 rounded-lg border border-red-900/60 shadow-lg flex-1">
+                    <XCircle className="w-6 h-6 md:w-8 md:h-8 shrink-0" />
+                    <div><strong className="block text-white uppercase text-sm md:text-base">Vonis Ditolak</strong> <span className="text-xs md:text-sm">Kesimpulan tidak sesuai dengan target DNA di awal investigasi.</span></div>
+                  </motion.div>
+                )}
+                {interpStatus === 'success' && (
+                  <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="text-emerald-400 font-mono bg-emerald-950/60 px-4 md:px-6 py-3 md:py-4 rounded-lg border border-emerald-900/60 flex items-center gap-3 md:gap-4 shadow-lg flex-1">
+                    <CheckCircle2 className="w-6 h-6 md:w-8 md:h-8 shrink-0" />
+                    <div><strong className="text-white uppercase block text-sm md:text-base">Vonis Ditetapkan</strong> <span className="text-xs md:text-sm">Pasien dipastikan membawa virus HPV Risiko Tinggi.</span></div>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -693,9 +699,9 @@ export default function App() {
                   nextStep();
                 }}
                 disabled={interpStatus !== 'success'}
-                className={`px-10 py-4 rounded-lg font-bold ml-auto transition-all flex items-center gap-3 uppercase tracking-widest text-lg ${interpStatus === 'success' ? 'bg-amber-500 text-slate-900 hover:bg-amber-400 shadow-[0_0_25px_rgba(245,158,11,0.6)]' : 'bg-slate-800 text-slate-600 cursor-not-allowed border border-slate-700'}`}
+                className={`px-6 py-3 md:px-10 md:py-4 rounded-lg font-bold md:ml-auto transition-all flex items-center justify-center gap-2 md:gap-3 uppercase tracking-widest text-base md:text-lg w-full md:w-auto ${interpStatus === 'success' ? 'bg-amber-500 text-slate-900 hover:bg-amber-400 shadow-[0_0_25px_rgba(245,158,11,0.6)]' : 'bg-slate-800 text-slate-600 cursor-not-allowed border border-slate-700'}`}
               >
-                TUTUP KASUS (EVALUASI) <ChevronRight className="w-6 h-6" />
+                TUTUP KASUS (EVALUASI) <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
               </motion.button>
             </div>
           </WindowFrame>
@@ -757,7 +763,7 @@ export default function App() {
                   })}
                 </div>
 
-                <div className="flex justify-end pt-8 border-t border-slate-700/50">
+                <div className="flex flex-col md:flex-row justify-end pt-6 md:pt-8 border-t border-slate-700/50 gap-4 md:gap-0">
                   {!quizShowFeedback ? (
                     <motion.button
                       whileHover={quizSelectedOption !== null ? { scale: 1.05 } : {}}
@@ -766,7 +772,7 @@ export default function App() {
                         if (quizSelectedOption === postTestQuestions[quizStep].answer) setQuizScore(prev => prev + 1);
                       }}
                       disabled={quizSelectedOption === null}
-                      className={`px-10 py-4 rounded-lg font-bold transition-all uppercase tracking-widest text-lg ${quizSelectedOption !== null ? 'bg-cyan-500 text-slate-900 shadow-[0_0_20px_rgba(6,182,212,0.5)] hover:bg-cyan-400' : 'bg-slate-800 text-slate-600 cursor-not-allowed border border-slate-700'}`}
+                      className={`px-6 py-3 md:px-10 md:py-4 rounded-lg font-bold transition-all uppercase tracking-widest text-base md:text-lg w-full md:w-auto ${quizSelectedOption !== null ? 'bg-cyan-500 text-slate-900 shadow-[0_0_20px_rgba(6,182,212,0.5)] hover:bg-cyan-400' : 'bg-slate-800 text-slate-600 cursor-not-allowed border border-slate-700'}`}
                     >
                       VERIFIKASI JAWABAN
                     </motion.button>
@@ -778,9 +784,9 @@ export default function App() {
                         setQuizSelectedOption(null);
                         setQuizStep(prev => prev + 1);
                       }}
-                      className="px-10 py-4 rounded-lg font-black bg-amber-500 text-slate-900 hover:bg-amber-400 shadow-[0_0_25px_rgba(245,158,11,0.6)] flex items-center gap-3 uppercase tracking-widest text-lg"
+                      className="px-6 py-3 md:px-10 md:py-4 rounded-lg font-black bg-amber-500 text-slate-900 hover:bg-amber-400 shadow-[0_0_25px_rgba(245,158,11,0.6)] flex items-center justify-center gap-2 md:gap-3 uppercase tracking-widest text-base md:text-lg w-full md:w-auto"
                     >
-                      {quizStep === 4 ? 'ARSIPKAN KASUS' : 'LANJUTKAN INTEROGASI'} <ChevronRight className="w-6 h-6" />
+                      {quizStep === 4 ? 'ARSIPKAN KASUS' : 'LANJUTKAN INTEROGASI'} <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
                     </motion.button>
                   )}
                 </div>
